@@ -1,6 +1,6 @@
 // The Secret Life of Objects
 // this vs bind vs apply (call)
-// this refers to object called 
+// this refers to object called
 
 
 // PROTOTYPES
@@ -46,16 +46,16 @@ function Vector(x, y) {
   this.y = y;
 }
 
-Vector.prototype.plus = function(other_vector) {
+Vector.prototype.plus = function (other_vector) {
   return new Vector(this.x + other_vector.x, this.y + other_vector.y);
 };
 
-Vector.prototype.minus = function(other_vector) {
+Vector.prototype.minus = function (other_vector) {
   return new Vector(this.x - other_vector.x, this.y - other_vector.y);
 };
 
 Object.defineProperty(Vector.prototype, "length", {
-  get: function() {return Math.sqrt(this.x * this.x + this.y * this.y);}
+  get: function () { return Math.sqrt(this.x * this.x + this.y * this.y); }
 });
 // Testing
 console.log(new Vector(1, 2).plus(new Vector(2, 3)));
@@ -73,10 +73,10 @@ function ArraySeq(array) {
   this.array = array;
   this.pos = -1;
 }
-ArraySeq.prototype.newSequence = function() {
+ArraySeq.prototype.newSequence = function () {
   return (this.pos == this.array.length - 1) ? null : this.array.slice(this.pos++, this.array.length);
 };
-ArraySeq.prototype.current = function() {
+ArraySeq.prototype.current = function () {
   return this.array[this.pos];
 };
 
